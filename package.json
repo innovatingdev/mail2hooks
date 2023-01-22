@@ -1,0 +1,43 @@
+{
+  "name": "mail2hooks",
+  "version": "1.0.0",
+  "description": "mail2hooks for the rescue, if an application only supports to send notifications via email but you like to use your favorite messenger - or any other service - for this.",
+  "keywords": [
+    "smtp",
+    "mail",
+    "email",
+    "hook",
+    "webhook",
+    "notify",
+    "notification"
+  ],
+  "homepage": "https://github.com/innovatingdev/mail2hooks",
+  "bugs": "https://github.com/innovatingdev/mail2hooks/issues",
+  "license": "AGPL-3.0-or-later",
+  "author": "The Innovating Developer <contact@innovating.dev>",
+  "main": "src/main.ts",
+  "repository": "github:innovatingdev/mail2hooks",
+  "scripts": {
+    "start": "npx ts-node src/main.ts",
+    "lint": "npx eslint . --ext .ts",
+    "build": "npx esbuild src/main.ts --bundle --minify --platform=node --outfile=out/mail2hooks.js"
+  },
+  "dependencies": {
+    "mailparser": "^3.6.3",
+    "smtp-server": "^3.11.0",
+    "zod": "^3.20.2"
+  },
+  "devDependencies": {
+    "@types/mailparser": "^3.4.0",
+    "@types/node": "^18.11.18",
+    "@types/smtp-server": "^3.5.7",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "@typescript-eslint/parser": "^5.48.2",
+    "esbuild": "^0.17.3",
+    "eslint": "^8.32.0",
+    "eslint-plugin-import": "^2.27.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  },
+  "private": true
+}

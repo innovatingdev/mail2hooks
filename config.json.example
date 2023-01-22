@@ -1,0 +1,37 @@
+{
+    "server": {
+        "credentials": {
+            "user": "smtpuser",
+            "password": "smtppassword"
+        }
+    },
+    "hooks": [
+        {
+            "comment": "Example configuration to forward to the Signal REST API (https://github.com/bbernhard/signal-cli-rest-api)",
+            "mailto": "me@example.local",
+            "accept": [
+                "^.*PASS.*$"
+            ],
+            "deny": [
+                "^.*FAIL.*$"
+            ],
+            "replace": {
+                "\n": "\\n",
+                "\r": "",
+                "\t": "    "
+            },
+            "target": "http://signal-rest-api.example.local/v2/send",
+            "method": "POST",
+            "body": {
+                "message": "%%SUBJECT%%\n\n%%CONTENT%%",
+                "number": "+49123456789",
+                "recipients": [
+                    "+49987654321"
+                ]
+            },
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }
+   ]
+}
